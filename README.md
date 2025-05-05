@@ -17,3 +17,21 @@ docker run --name pgstock -e POSTGRES_PASSWORD=1234 -p 5432:5432 -d postgres
 
 ## PostgreSQL 패키지 설치
 pip install sqlalchemy psycopg2-binary yfinance pandas
+
+
+## 🚀 실행 방법
+
+1. PostgreSQL + Grafana 실행:
+   ```bash
+   cd pg_grafana
+   docker-compose up -d
+
+## 주식 데이터 수집 및 저장:
+python save_to_db_sync.py
+
+### 브라우저에서 Grafana 접속:
+URL: http://localhost:3000
+
+ID: admin , PW: admin
+
+PostgreSQL 연결 후 Dashboard 구성
