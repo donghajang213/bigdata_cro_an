@@ -12,3 +12,8 @@ pip install yfinance
 pip install streamlit
 pip install altair==4.2.2
 
+## Docker 실행 후(로컬)
+docker run --name pgstock -e POSTGRES_PASSWORD=1234 -p 5432:5432 -d postgres
+
+## PostgreSQL 패키지 설치
+pip install sqlalchemy psycopg2-binary yfinance pandas
