@@ -23,5 +23,15 @@ services:
     depends_on:
       - postgres
 
+  fetcher:
+    build: .
+    container_name: auto_fetcher
+    depends_on:
+      - postgres
+    volumes:
+      - ./auto_fetch.py:/app/auto_fetch.py
+      - ./crontab.txt:/app/crontab.txt
+    restart: unless-stopped
+
 volumes:
   pgdata:
